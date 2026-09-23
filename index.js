@@ -92,6 +92,15 @@ export function sharesFirstLetter(str1, str2) {
  */
 export function quintuple(numbers) {
   // TODO
+  if (numbers.length < 1) return [];
+
+  const quintupleArray = [];
+
+  for (let i = 0; i <= numbers.length - 1; i++) {
+    quintupleArray.push(numbers[i] * 5);
+  }
+
+  return quintupleArray;
 }
 
 /**
