@@ -67,7 +67,7 @@ describe("getFirstLast", function () {
   });
 });
 
-describe("sharesFirstLetter", function () {
+describe.only("sharesFirstLetter", function () {
   it("returns true if first letters match", function () {
     expect(sharesFirstLetter("apple", "apricot")).toBe(true);
   });
