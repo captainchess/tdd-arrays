@@ -122,6 +122,14 @@ export function quintuple(numbers) {
  */
 export function pluralize(words) {
   // TODO
+  if (words.length < 1) return [];
+
+  const newWords = [];
+  
+  for (let i = 0; i <= words.length - 1; i++) {
+    words[i].endsWith("s") ? newWords.push(words[i] + "es") : newWords.push(words[i] + "s");
+  }
+  return newWords;
 }
 
 /**
