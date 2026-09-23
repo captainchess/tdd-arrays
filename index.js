@@ -203,7 +203,7 @@ export function findSong(playlist, song) {
   for (let i = 0; i < playlist.length; i++) {
     if (playlist[i] === song) return i;
   }
-  
+
   return -1;
 }
 
@@ -222,4 +222,10 @@ export function findSong(playlist, song) {
  */
 export function findSpy(map) {
   // TODO
+  for (let i = 0; i < map.length; i++) {
+    for (let j = 0; j < map[i].length; j++) {
+      if (map[i][j] === "spy") return [i, j];
+    }
+  }
+  return null;
 }
