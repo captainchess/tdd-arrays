@@ -125,7 +125,7 @@ export function pluralize(words) {
   if (words.length < 1) return [];
 
   const newWords = [];
-  
+
   for (let i = 0; i <= words.length - 1; i++) {
     words[i].endsWith("s") ? newWords.push(words[i] + "es") : newWords.push(words[i] + "s");
   }
@@ -147,6 +147,14 @@ export function pluralize(words) {
  */
 export function countAttendance(attendance) {
   // TODO
+  if (attendance.length < 1) return 0;
+
+  let countStudents = 0;
+
+  for (let i = 0; i < attendance.length; i++) {
+    attendance[i] ? countStudents+=1 : countStudents+=0;
+  }
+  return countStudents;
 }
 
 /**
