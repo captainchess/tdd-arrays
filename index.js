@@ -172,13 +172,15 @@ export function countAttendance(attendance) {
 export function getLongestWord(sentence) {
   // TODO
   if (sentence.length < 1) return null;
+  if (sentence.length === 1) return sentence[0];
 
-  let countLength = '';
-  for (let i = 0; i < sentence.length; i++) {
-    countLength = sentence[i].length > countLength.length ? sentence[i] : countLength;
+  let longerOfTwo = '';
+  let longest = '';
+  for (let i = 0; i < sentence.length - 1; i++) {
+    longerOfTwo = sentence[i].length >= sentence[i + 1].length ? sentence[i] : sentence[i + 1];
+    longest = longerOfTwo.length > longest.length ? longerOfTwo : longest;
   }
-
-  return countLength;
+  return longest;
 }
 
 /**
@@ -196,6 +198,13 @@ export function getLongestWord(sentence) {
  */
 export function findSong(playlist, song) {
   // TODO
+  if (playlist.length < 1) return -1;
+
+  for (let i = 0; i < playlist.length; i++) {
+    if (playlist[i] === song) return i;
+  }
+  
+  return -1;
 }
 
 /**
