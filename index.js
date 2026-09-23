@@ -11,6 +11,7 @@
  */
 export function getFirst(array) {
   // TODO
+  return array[0];
 }
 
 /**
@@ -26,6 +27,7 @@ export function getFirst(array) {
  */
 export function getLast(array) {
   // TODO
+  return array[array.length - 1];
 }
 
 /**
@@ -43,6 +45,14 @@ export function getLast(array) {
  */
 export function getFirstLast(array) {
   // TODO
+  const first = array[0];
+  const last = array[array.length - 1];
+
+  if (!first) return [];
+  
+  if (typeof(first) === "boolean") return [first, last];
+  
+  return first != last ? [first, last] : [first];
 }
 
 /**
